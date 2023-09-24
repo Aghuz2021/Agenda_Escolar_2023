@@ -24,7 +24,7 @@ exports.getPefilAdmin = async (req, res) => {
          } else {
             // Usuario encontrado, muestra el perfil
             const user = results[0];
-            res.render('./views_Admin/adminPerfil', {
+            res.render('adminPerfil', {
                user
             });
          }
@@ -36,3 +36,4 @@ exports.getPefilAdmin = async (req, res) => {
       });
    }
 };
+

@@ -1,46 +1,68 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Login</title>
-	<link rel="stylesheet" href="resources/css/style.css">
-</head>
-<body>
-	<div class="login-form">
-		<h1>Login</h1>
-		<form action="auth" method="POST">
-			<input type="text" name="usuario" placeholder="usuario" autofocus required>
-			<input type="password" name="contrasenia" placeholder="Contraseña" required>
-			
-			<select id="rol" name="rol" class="select-css" tabindex="3" required>
-				<option value="" disabled selected>Seleccione el rol</option>
-				<option value="admin">Admin</option>
-				<option value="maestro">maestro</option>    
-				 
-		  </select>
-		  <br/>
-			<input type="submit" class="btn-login" value="Aceder">
-		</form>
-		<a href="register" class="btn-register">Register</a>
-		
-		
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-   <% if (typeof alert != "undefined")  { %>
-    <script>
-    Swal.fire({
-      title:'<%= alertTitle %>',
-      text:'<%= alertMessage %>',
-      icon:'<%= alertIcon %>',
-      showConfirmButton: '<%= showConfirmButton %>',
-      timer: '<%= timer %>'
-    }).then(()=>{
-      window.location='/<%= ruta %>'
-    })
-    </script>
-  <% } %>
-	</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="resources/css/style1.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="input-container">
+                <i class="fa-solid fa-school-flag" style="font-size: 70px; color: white;"></i>
+            </div>
+
+            <form action="auth" method="POST">
+                <div class="input-container">
+                    <i class="fas fa-user" style="color: white;"></i>
+                    <input type="text" name="usuario" id="usuario" placeholder="Usuario" autofocus required>
+                </div>
+                <div class="input-container">
+                    <i class="fas fa-lock" style="color: white;"></i>
+                    <input type="password" name="contrasenia" placeholder="Contraseña" id="contraseña" required>
+                </div>
+                <div class="input-container">
+                    <i class="fa-solid fa-arrow-right" style="color: white;"></i>
+                    <select id="rol" name="rol" class="select-css" tabindex="3" required>
+                        <option value="" disabled selected>Seleccione el rol</option>
+                        <option value="admin">Admin</option>
+                        <option value="maestro">maestro</option>
+
+                    </select>
+                    
+                </div>
+                <div class="input-container">
+                    <button type="submit">Ingresar</button>
+                </div>
+                <div class="input-container">
+                    <a href="register" type="submit">Registrarse</a>
+
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	 
+
+	 <% if (typeof alert != "undefined")  { %>
+	  <script>
+	  Swal.fire({
+		 title:'<%= alertTitle %>',
+		 text:'<%= alertMessage %>',
+		 icon:'<%= alertIcon %>',
+		 showConfirmButton: '<%= showConfirmButton %>',
+		 timer: '<%= timer %>'
+	  }).then(()=>{
+		 window.location='/<%= ruta %>'
+	  })
+	  </script>
+	<% } %>
 </body>
+
 </html>

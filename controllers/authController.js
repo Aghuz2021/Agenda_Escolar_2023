@@ -63,7 +63,7 @@ exports.postAuth = async (req, res) => {
                     res.redirect(`/user/my-perfil/${results[0].nombre}/${results[0].id}`)
                 }else if(results[0].rol = 'admin'){
                     // Corrección: redirigir al perfil del usuario usando results[0].id
-                    res.redirect(`/user/my-perfil/${results[0].nombre}/${results[0].id}`)
+                    res.redirect(`/user/my-perfil-admin/${results[0].nombre}/${results[0].id}`)
                 }
                 
             }

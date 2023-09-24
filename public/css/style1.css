@@ -1,0 +1,119 @@
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   background-image: url('./escuela2jpg.jpg'); /* Reemplaza 'tu-imagen-de-fondo.jpg' con la URL de tu imagen de fondo */
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+
+.container {
+   background-color: #ffffff14;
+   border-radius: 5px;
+   box-shadow: -4px 2px 23px 20px rgb(227 221 221 / 12%);
+   padding: 20px;
+   width: 300px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   height: 405px;
+}
+
+
+.login-box {
+   text-align: center;
+}
+
+h2 {
+   margin: 0 0 20px 0;
+   color: #333;
+}
+
+
+.input-container {
+   margin-bottom: 15px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.input-container i {
+   margin-right: 10px;
+   color: #777;
+}
+
+input[type="text"],
+input[type="password"]{
+   width: 100%;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 3px;
+   font-size: 16px;
+   color: #0700d4;
+}
+
+
+button {
+   width: 100%;
+   padding: 10px;
+   background-color: #fb2d2d;
+   border: none;
+   color: #fff;
+   cursor: pointer;
+   border-radius: 3px;
+   font-size: 16px;
+   margin-top: 10px;
+   border: 2px solid red;
+}
+
+button:hover {
+   background-color: #ff0000;
+   transform: translatex( 12px);
+   border: 1px solid; 
+}
+
+button:focus {
+   outline: none;
+}
+
+button:active {
+   transform: scale(0.95);
+}
+#rol {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 3px;
+   outline: none;
+   font-size: 16px;
+   color: #0700d4;;
+}
+.input-container a{
+   width: 100%;
+   padding: 10px;
+   background-color: #fb2d2d;
+   border: none;
+   color: #fff;
+   cursor: pointer;
+   border-radius: 3px;
+   font-size: 16px;
+   margin-top: 10px;
+   border: 2px solid red;
+   text-decoration: none;
+}
+
+.input-container a:hover{
+   
+   background-color: #ff0000;
+   transform: translatex( 12px);
+   border: 1px solid; 
+   
+   
+}
