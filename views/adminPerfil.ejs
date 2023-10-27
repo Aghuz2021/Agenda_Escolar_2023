@@ -104,6 +104,116 @@
     .bd-mode-toggle .dropdown-menu .active .bi {
       display: block !important;
     }
+    
+
+
+    @keyframes girarBoton {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+button{
+  margin-right: 6px;
+}
+button:hover {
+  transform: scale(2.0);
+  transform: translatey( -5px); 
+  transition: 1ms;
+  
+}
+
+
+@keyframes girarBoton {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.materias{
+  animation: vibrarElemento 0.3s ease ;
+ 
+}
+.alumnos{
+  animation: vibrarElemento 0.3s ease ;
+}
+.docentes{
+  animation: vibrarElemento 0.3s ease ;
+}
+.perfil{
+  animation: vibrarElemento 0.3s ease ;
+}
+@keyframes vibrarElemento {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(400px);
+     
+    }
+    75% {
+        transform: translateX(-5px);
+        
+    }
+    100% {
+        transform: translateX(5px);
+       
+    }
+}
+@keyframes vibrarElementodos {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+     
+    }
+    75% {
+        transform: translateX(-5px);
+        
+    }
+    100% {
+        transform: translateX(5px);
+       
+    }
+}
+h5{
+  animation: vibrarElementodos 1.3s ease ;
+  
+}
+@keyframes aparecerContainer {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.container{
+  animation: aparecerContainer 4s ease forwards;
+}
+h1{
+  animation: vibrarElemento 2.3s ease ;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+  font-weight: bold;
+  
+  
+}
+a{
+  text-decoration: none;
+}
   </style>
 
 <script>
@@ -260,6 +370,7 @@
     </ul>
   </div>
 
+  
 
   <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
     <li>
@@ -314,65 +425,85 @@
         </ul>
         <form class="d-flex" >
           
-          <button class="btn btn-outline-success" type="submit">Cerrar Sesion</button>
+          
+          <a class="btn btn-outline-success"href='/login'>Cerrar Sesion</a>
         </form>
       </div>
     </div>
   </nav>
 
   <div class="container mt-5">
+    <h1 class=" navbar-brand mb-4 " style="font-size: 40px;">Bienvenido administrador</h1>
     <div class="row row-cols-1 row-cols-md-1 g-4">
       <div class="col">
-        <div class="card" style="background-color: aqua;     background-color: #0c9f9f46;
+        <div class="card one" style="background-color: aqua;     background-color: #0c9f9f46;
            color: #00ceff;
            border: 1px solid;">
           <div class="card-body">
-            <i class="fa-solid fa-book" style="color:#00ceff; font-size: 20px;"></i>
-            <h5 class="card-title fw-bold">Crear Materias</h5>
-            <button type="button" class="btn btn-primary" style="border: 2px solid rgb(110, 133, 249);"><i
-              class="fa-solid fa-plus m-1"></i>Crear</button>
+            <i class="fa-solid fa-book materias" style="color:#00ceff; font-size: 20px;"></i>
+            <h5 class="card-title fw-bold ">Materias</h5>
+            <a >
+              <a href="/user/my-perfil-admin/<%= user.nombre %>/<%= user.id %>/create-materia">
+                <button type="button" class="btn btn-primary" style="border: 2px solid rgb(110, 133, 249);"><i
+                  class="fa-solid fa-plus m-1"></i>Crear</button>
+              </a>
+              
+            </a>
+            
             <button type="button" class="btn btn-primary" style="border: 2px solid rgb(110, 133, 249);"><i
               class="fa-solid fa-pen-to-square m-1"></i>Editar</button>
+              <button type="button" class="btn btn-primary" style="border: 2px solid rgb(110, 133, 249);"><i class="fa-solid fa-eye m-1"></i>Visualizar</button>
+              
           </div>
+          
+        </div>
+          
         </div>
       </div>
       <div class="col">
-        <div class="card " style="background-color: #e0a1023c;
+        <div class="card mt-3 dos" style="background-color: #e0a1023c;
            color: #ffbf00;
            border: 1px solid;">
-          <div class="card-body">
-            <i class="fas fa-user" style="color: rgb(255, 191, 0); font-size: 20px;"></i>
-            <h5 class="card-title fw-bold">Crear Alumno</h5>
-            <button type="button" class="btn btn-warning"
+          <div class="card-body ">
+            <i class="fas fa-user alumnos" style="color: rgb(255, 191, 0); font-size: 20px;"></i>
+            <h5 class="card-title fw-bold ">Alumno</h5>
+            <a href="/user/my-perfil-admin/<%= user.nombre %>/<%= user.id %>/create-alumno">
+              <button type="button" class="btn btn-warning"
               style="border: 2px solid rgba(246, 195, 7, 0.673); color: white;"><i
                 class="fa-solid fa-plus m-1"></i>Crear</button>
+            </a>
+            
             <button type="button" class="btn btn-warning"
               style="border: 2px solid rgba(246, 195, 7, 0.673); color: white;"><i
                 class="fa-solid fa-pen-to-square m-1"></i>Editar</button>
+                <a href="/user/my-perfil-admin/<%= user.nombre %>/<%= user.id %>/alumno-Data">
+                <button type="button" class="btn btn-warning"
+                style="border: 2px solid rgba(246, 195, 7, 0.673); color: white;"><i class="fa-solid fa-eye m-1"></i>Visualizar</button>
+                </a>
+               
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="card" style=" background-color: #ff000023;color: #e31b05;
+        <div class="card mt-3 tres" style=" background-color: #ff000023;color: #e31b05;
            border: 1px solid;">
           <div class="card-body">
-            <i class="fa-solid fa-chalkboard-user" style="color:red; font-size:20px;"></i>
-            <h5 class="card-title fw-bold">Crear Docentes</h5>
+            <i class="fa-solid fa-chalkboard-user docentes" style="color:red; font-size:20px;"></i>
+            <h5 class="card-title fw-bold ">Docentes</h5>
             <button type="button" class="btn btn-danger"><i
               class="fa-solid fa-plus m-1"></i>Crear</button>
-            <button type="button" class="btn btn-danger"><i
-              class="fa-solid fa-pen-to-square m-1"></i>Editar</button>
-          </div>
+          
         </div>
       </div>
       <div class="col">
-        <div class="card" style=" background-color: #00ff0d15;color: #0b8900;
+        <div class="card mt-3 cuatro" style=" background-color: #00ff0d15;color: #0b8900;
            border: 1px solid;">
           <div class="card-body">
-            <i class="fa-solid fa-address-card" style="color:rgb(33, 153, 0); font-size:20px;"></i>
-            <h5 class="card-title fw-bold">My perfil</h5>
-            <button type="button" class="btn btn-success"><i class="fa-solid fa-eye m-1"></i>Visualizar</button>
-
+            <i class="fa-solid fa-address-card perfil" style="color:rgb(33, 153, 0); font-size:20px;"></i>
+            <h5 class="card-title fw-bold ">My perfil</h5>
+            <a href="/user/my-perfil-admin/<%= user.nombre %>/<%= user.id %>/visualizarData">
+            <button type="button" class="btn btn-success"><i class="fa-solid fa-eye m-1 " ></i>Visualizar</button>
+            </a>
           </div>
         </div>
       </div>

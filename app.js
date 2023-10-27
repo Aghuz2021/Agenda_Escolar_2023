@@ -25,6 +25,7 @@ const authRoutes = require('./routers/authRoutes');
 const indexRoutes = require('./routers/indexRoutes');
 const maestroRoutes = require('./routers/maestroRoutes');
 const adminRoutes = require('./routers/adminRoutes');
+
 app.use('/', authRoutes);
 app.use('/', indexRoutes);
 

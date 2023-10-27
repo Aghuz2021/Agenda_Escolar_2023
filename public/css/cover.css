@@ -9,15 +9,17 @@
   color: #000000;
   /* text-shadow: none; */
   width: 170px;
-  background-color: beige;
-  border: 1px solid;
+  background-color: rgb(255, 255, 255);
+
+  border: 2px solid;
+    border-radius: 0px;
 }
 .btn-secondary:hover{
-   transform: translateY( 5px); 
-   background-color: #76ff5e;
-   transform: translateY( 5px);
-   border: 2px solid green;
-   color: black;
+   transform: translatex( 5px); 
+   background-color: #ff1c64;
+   
+   border: 2px solid rgb(0, 0, 0);
+   color: rgb(0, 0, 0);
 }
 
 
