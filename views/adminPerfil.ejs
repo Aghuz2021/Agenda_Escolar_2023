@@ -148,58 +148,7 @@ button:hover {
 .perfil{
   animation: vibrarElemento 0.3s ease ;
 }
-@keyframes vibrarElemento {
-    0% {
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(-5px);
-    }
-    50% {
-        transform: translateX(400px);
-     
-    }
-    75% {
-        transform: translateX(-5px);
-        
-    }
-    100% {
-        transform: translateX(5px);
-       
-    }
-}
-@keyframes vibrarElementodos {
-    0% {
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(-5px);
-    }
-    50% {
-        transform: translateX(5px);
-     
-    }
-    75% {
-        transform: translateX(-5px);
-        
-    }
-    100% {
-        transform: translateX(5px);
-       
-    }
-}
-h5{
-  animation: vibrarElementodos 1.3s ease ;
-  
-}
-@keyframes aparecerContainer {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
+
 .container{
   animation: aparecerContainer 4s ease forwards;
 }
@@ -213,6 +162,12 @@ h1{
 }
 a{
   text-decoration: none;
+}
+.card-body{
+  box-shadow: 2px 6px 19px 0px rgba(85, 85, 85, 0.5);
+}
+nav{
+  box-shadow: 2px 6px 19px 0px rgba(85, 85, 85, 0.5);
 }
   </style>
 
@@ -431,84 +386,143 @@ a{
       </div>
     </div>
   </nav>
-
-  <div class="container mt-5">
-    <h1 class=" navbar-brand mb-4 " style="font-size: 40px;">Bienvenido administrador</h1>
-    <div class="row row-cols-1 row-cols-md-1 g-4">
-      <div class="col">
-        <div class="card one" style="background-color: aqua;     background-color: #0c9f9f46;
-           color: #00ceff;
-           border: 1px solid;">
-          <div class="card-body">
-            <i class="fa-solid fa-book materias" style="color:#00ceff; font-size: 20px;"></i>
-            <h5 class="card-title fw-bold ">Materias</h5>
-            <a >
-              <a href="/user/my-perfil-admin/<%= user.nombre %>/<%= user.id %>/create-materia">
-                <button type="button" class="btn btn-primary" style="border: 2px solid rgb(110, 133, 249);"><i
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" style="height: 100vh;">
+        <div class="position-sticky pt-3">
+          <div class="position-sticky pt-3">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href='./'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  Dashboard Inicio
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./create-alumno">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                  Crear Alumno
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  Perfil usuario
+                </a>
+              </li>
+              
+             
+    
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Saved reports</span>
+              <a class="link-secondary" href="#" aria-label="Add a new report">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  Current month
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  Last quarter
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  Social engagement
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  Year-end sale
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" > 
+    <div class="container mt-5">
+      <h1 class=" navbar-brand mb-4 " style="font-size: 40px;color:#1879f0; font-weight: bold;"  >Bienvenido administrador</h1>
+      <div class="row row-cols-1 row-cols-md-1 g-4">
+        <div class="col">
+          <div class="card one" style="background-color: aqua;     background-color: #0c9f9f46;
+             color: #00ceff;
+             border: 1px solid;">
+            <div class="card-body">
+              <i class="fa-solid fa-book materias" style="color:#00ceff; font-size: 20px;"></i>
+              <h5 class="card-title fw-bold ">Materias</h5>
+              
+              <a >
+                <a href="/user/my-perfil-admin/<%= user.nombre %>/<%= user.id %>/create-materia">
+                  <button type="button" class="btn btn-primary" style="border: 2px solid rgb(110, 133, 249);"><i
+                    class="fa-solid fa-plus m-1"></i>Crear</button>
+                </a>
+                
+              </a>
+            
+                <button type="button" class="btn btn-primary" style="border: 2px solid rgb(110, 133, 249);"><i class="fa-solid fa-eye m-1"></i>Visualizar</button>
+                
+            </div>
+            
+          </div>
+            
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mt-3 dos" style="background-color: #e0a1023c;
+             color: #ffbf00;
+             border: 1px solid;">
+            <div class="card-body ">
+              <i class="fas fa-user alumnos" style="color: rgb(255, 191, 0); font-size: 20px;"></i>
+              <h5 class="card-title fw-bold ">Alumno</h5>
+              <a href="/user/my-perfil-admin/<%= user.nombre %>/<%= user.id %>/create-alumno">
+                <button type="button" class="btn btn-warning"
+                style="border: 2px solid rgba(246, 195, 7, 0.673); color: white;"><i
                   class="fa-solid fa-plus m-1"></i>Crear</button>
               </a>
-              
-            </a>
-            
-            <button type="button" class="btn btn-primary" style="border: 2px solid rgb(110, 133, 249);"><i
-              class="fa-solid fa-pen-to-square m-1"></i>Editar</button>
-              <button type="button" class="btn btn-primary" style="border: 2px solid rgb(110, 133, 249);"><i class="fa-solid fa-eye m-1"></i>Visualizar</button>
-              
+                  <a href="/user/my-perfil-admin/<%= user.nombre %>/<%= user.id %>/alumno-Data">
+                  <button type="button" class="btn btn-warning"
+                  style="border: 2px solid rgba(246, 195, 7, 0.673); color: white;"><i class="fa-solid fa-eye m-1"></i>Visualizar</button>
+                  </a>
+                 
+            </div>
           </div>
-          
         </div>
-          
-        </div>
-      </div>
-      <div class="col">
-        <div class="card mt-3 dos" style="background-color: #e0a1023c;
-           color: #ffbf00;
-           border: 1px solid;">
-          <div class="card-body ">
-            <i class="fas fa-user alumnos" style="color: rgb(255, 191, 0); font-size: 20px;"></i>
-            <h5 class="card-title fw-bold ">Alumno</h5>
-            <a href="/user/my-perfil-admin/<%= user.nombre %>/<%= user.id %>/create-alumno">
-              <button type="button" class="btn btn-warning"
-              style="border: 2px solid rgba(246, 195, 7, 0.673); color: white;"><i
+        <div class="col">
+          <div class="card mt-3 tres" style=" background-color: #ff000023;color: #e31b05;
+             border: 1px solid;">
+            <div class="card-body">
+              <i class="fa-solid fa-chalkboard-user docentes" style="color:red; font-size:20px;"></i>
+              <h5 class="card-title fw-bold ">Docentes</h5>
+              <button type="button" class="btn btn-danger"><i
                 class="fa-solid fa-plus m-1"></i>Crear</button>
-            </a>
             
-            <button type="button" class="btn btn-warning"
-              style="border: 2px solid rgba(246, 195, 7, 0.673); color: white;"><i
-                class="fa-solid fa-pen-to-square m-1"></i>Editar</button>
-                <a href="/user/my-perfil-admin/<%= user.nombre %>/<%= user.id %>/alumno-Data">
-                <button type="button" class="btn btn-warning"
-                style="border: 2px solid rgba(246, 195, 7, 0.673); color: white;"><i class="fa-solid fa-eye m-1"></i>Visualizar</button>
-                </a>
-               
           </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card mt-3 tres" style=" background-color: #ff000023;color: #e31b05;
-           border: 1px solid;">
-          <div class="card-body">
-            <i class="fa-solid fa-chalkboard-user docentes" style="color:red; font-size:20px;"></i>
-            <h5 class="card-title fw-bold ">Docentes</h5>
-            <button type="button" class="btn btn-danger"><i
-              class="fa-solid fa-plus m-1"></i>Crear</button>
-          
-        </div>
-      </div>
-      <div class="col">
-        <div class="card mt-3 cuatro" style=" background-color: #00ff0d15;color: #0b8900;
-           border: 1px solid;">
-          <div class="card-body">
-            <i class="fa-solid fa-address-card perfil" style="color:rgb(33, 153, 0); font-size:20px;"></i>
-            <h5 class="card-title fw-bold ">My perfil</h5>
-            <a href="/user/my-perfil-admin/<%= user.nombre %>/<%= user.id %>/visualizarData">
-            <button type="button" class="btn btn-success"><i class="fa-solid fa-eye m-1 " ></i>Visualizar</button>
-            </a>
+        <div class="col">
+          <div class="card mt-3 cuatro" style=" background-color: #00ff0d15;color: #0b8900;
+             border: 1px solid;">
+            <div class="card-body">
+              <i class="fa-solid fa-address-card perfil" style="color:rgb(33, 153, 0); font-size:20px;"></i>
+              <h5 class="card-title fw-bold ">My perfil</h5>
+              <a href="/user/my-perfil-admin/<%= user.nombre %>/<%= user.id %>/visualizarData">
+              <button type="button" class="btn btn-success"><i class="fa-solid fa-eye m-1 " ></i>Visualizar</button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
+  
 
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
